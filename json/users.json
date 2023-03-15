@@ -1,3 +1,4 @@
 [
-    {"id":1,"userName":"matti","password":"asd","pfp":"lone.png"}
+    {"id":1,"userName":"matti","password":"asd","pfp":"lone.png"},
+    {"id":2,"userName":"sara","password":"sara","pfp":"sara.jpg"}
 ]

@@ -1,6 +1,14 @@
 const express = require('express');
 const fs = require('fs');
 const router = express.Router();
+const session = require('express-session');
+
+// session code
+router.use(session({
+    secret: 'i<3MyGirlfriend',
+    resave: false,
+    saveUninitialized: false
+}));
 
 // get game page
 router.get('/', (req, res) => {
