@@ -10,6 +10,7 @@ const session = require("express-session");
 
 const indexPage = require("./routes/index");
 const gamePage = require("./routes/game");
+const registerPage = require("./routes/register");
 
 const app = express();
 
@@ -36,7 +37,8 @@ app.use(session({
 //kemur á prófi. setja upp routes eins og að skrifa youtube.com/channel i staðinn fyrir youtube.com
 // routers
 app.use("/", indexPage);
-app.use("/game", gamePage)
+app.use("/game", gamePage);
+app.use("/register", registerPage);
 
 // errors : page not found
 app.use((req, res, next) => {
@@ -53,5 +55,5 @@ app.use((err, req, res) => {
 
 // setting up the server
 app.listen(3000, () => {
-    console.log("If books could kill... Baby I'm the knowledge demon. >:) port 3000.......".green);
+    console.log("Allt er í lagi. Port 3000.......".green);
 });

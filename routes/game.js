@@ -22,14 +22,19 @@ router.post('/', (req, res) => {
     for(let i = 0; i < data.length; i += 1) {
         if (req.body.username == data[i].userName && 
             req.body.password == data[i].password) {
-            req.session.username = req.body.username;
+            req.session.userName = req.body.username;
+            req.session.pfp = data[i].pfp;
             req.session.isLoggedIn = true;
             login = true;
             console.log(`user ${data[i].userName} has logged in.`.blue);
         }
     }
     if (login) {
-        res.render('game', { title: '.' });
+        const userName = req.session.userName;
+        const pfp = req.session.pfp;
+        console.log(userName);
+        console.log(pfp);
+        res.render('game', { title: '.', userName, pfp });
     } else {
         res.redirect('/?status=fail');
     }
