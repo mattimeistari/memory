@@ -1,23 +1,37 @@
 const express = require("express");
 const path = require("path");
-require("colors");
+const colors = require("colors");
 const session = require("express-session");
+const fs = require("fs");
 
-fs.readFileSync('./json/users.json', "utf8", (err, data) => {
-    console.log("hallo1");
-if (err) {
-    console.log(`Lesskilningur er ekki nægur:" ${err}`);
-} else {
-    const data = JSON.parse(file);
+fs.readFile("./json/users.json", "utf8", (err, data) => {
+    if (err) {
+        console.log(`Lesskilningur er ekki nægur: ${err}`.red);
+    } else {
+        const usersArray = JSON.parse(data);
 
-    data.push({
-        "id": "x",
-        "userName": "nameInput",
-        "password": "passInput",
-        "pfp": "pfpInput"
-    });
+        const username = req.body.username
+        const password = req.body.password
+        const pfp = req.body.profpic
+
+        // make for loop to make new id autoincrement
+        
+        usersArray.push({
+            id: i,
+            userName: username,
+            password: password,
+            pfp: pfp,
+        });
+
+        const updatedData = JSON.stringify(usersArray);
+
+        fs.writeFile("./json/users.json", updatedData, "utf8", (err) => {
+            if (err) {
+                console.log(`Villa við uppfærslu á skrá: ${err}`.red);
+            } else {
+                console.log("Notandi bættur við í skrá!".green);
+            }
+        });
+    }
 });
-
-
-
-
+        

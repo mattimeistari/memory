@@ -29,7 +29,7 @@ app.set("view engine", "ejs"); // set up ejs for templating => test
 
 // session 
 app.use(session({
-    secret: "secret",
+    secret: "i<3MyGirlfriend",
     resave: true,
     saveUninitialized: true,
 }));

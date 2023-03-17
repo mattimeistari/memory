@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 
 // post login page
 router.post('/', (req, res) => {
-    res.render('index', { title: '.' });
+
 });
 
 module.exports = router;
