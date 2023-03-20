@@ -1,6 +1,10 @@
 const express = require('express');
 const fs = require('fs');
 const router = express.Router();
+const path = require("path");
+const colors = require("colors");
+const session = require("express-session");
+
 
 // get login page
 router.get('/', (req, res) => {
