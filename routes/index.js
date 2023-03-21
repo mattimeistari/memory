@@ -46,7 +46,7 @@ router.post('/', (req, res) => {
                     
                 } else {
                     console.log("Notandi bættur við í skrá!".green);
-                    res.render('register', { title: '.register' });
+                    res.redirect('/');
                 }
             });
         }
