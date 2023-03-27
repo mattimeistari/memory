@@ -3,22 +3,14 @@ body {
     text-align: center;
 }
 
-.midja {
-    margin-left: 40%;
-}
-
 .userInfo {
     font-size: 30px;
-    float: left;
 }
 
 #pfp {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     border: #000;
     border-style: outset;
     border-width: 5px;
-    float: left;
-    margin-left: 50px;
-    margin-right: 50px;
 }
