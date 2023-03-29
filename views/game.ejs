@@ -10,15 +10,16 @@
 <body>
     <h1>GAMEW!</h1>
     <div class="midja">
+
         <img id="pfp" src="/images/<%= pfp %>" alt="<%= userName %>" draggable="false">
 
         <p class="userInfo"><%= userName %></p>
     </div> <br>
 
-    <p id="card"><%= card %></p>
+    <p id="card"><%= cardsNames %></p>
     
-    <p id="deck"><%= deck %></p>
-    
-    <img src="/images/cardImages/<%= card %>.png" alt="card image">
+    <% for(let i = 0; i < cards.length; i++) { %>
+        <img src="/images/cardImages/<%= cards %>.png" alt="card image">
+    <% } %>
 </body>
 </html>

@@ -30,8 +30,8 @@ app.set("view engine", "ejs"); // set up ejs for templating => test
 // session 
 app.use(session({
     secret: "i<3MyGirlfriend",
-    resave: true,
-    saveUninitialized: true,
+    resave: false,
+    saveUninitialized: false,
 }));
 
 //kemur á prófi. setja upp routes eins og að skrifa youtube.com/channel i staðinn fyrir youtube.com
