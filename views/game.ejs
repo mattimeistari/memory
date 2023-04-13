@@ -18,11 +18,11 @@
     </div> <br>
 <!--
 -->
-    <p id="card"><%= cardsNames %></p>
+    <p id="card"><%= cardsTitles %></p>
     
-    <% for(let i = 0; i < cards.length; i++) { %>
-        <img src="/images/cardImages/<%= cards %>.png" alt="card image">
-    <% } %>
+    <% cards.forEach(card => { %>
+        <img src="/images/cardImages/<%= card %>.png" alt="card image">
+    <% }) %>
 
 
 </body>

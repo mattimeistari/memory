@@ -28,29 +28,43 @@ router.get("/", (req, res) => {
         if (!req.session.deck) {
             req.session.deck = deck;
         }
+
+        if (!req.session.cardsNames) {
+            req.session.cardsNames = cardsNames;
+        }
     
         if (!req.session.cards) {
             console.log("hmm!!".red);
             req.session.cards = [];
+            req.session.cardsTitles = [];
             for (let i = 0; i < 4; i++) {
                 const random = Math.floor(Math.random() * req.session.deck.length);
                 req.session.cards.push(req.session.deck.splice(random, 1)[0]);
+                req.session.cardsTitles.push(req.session.cardsNames.splice(random, 1)[0]);
                 console.log(req.session.cards);
             }
         }
 
+        let cardsTitles = req.session.cardsTitles;
+
     const { userName, pfp } = req.session;
 
+    console.log("ASDASDASD", req.session.userName, req.session.pfp);
+
     if (!pfp) {
-        console.log("No pfp".orange);
+        console.log("no pfp available");
+    } else {
+        console.log(pfp)
     }
 
-    res.render("game", { title: ".", userName, pfp, cards: req.session.cards, deck: req.session.deck, cardsNames });
+    // prtint cardsnames
+    console.log(cardsTitles);
+
+    res.render("game", { title: ".", userName, pfp, cards: req.session.cards, deck: req.session.deck, cardsTitles: req.session.cardsTitles });
 });
 
 router.post("/", (req, res) => {
-    const { userName, pfp } = req.session;
-    res.render("game", { title: ".", userName, pfp, cards: req.session.cards, deck: req.session.deck, cardsNames });
+    res.redirect("/")
 });
 
 module.exports = router;

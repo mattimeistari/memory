@@ -1,11 +1,30 @@
-.userInfo {
-    font-size: 30px;
+/* Select all the images with src attribute containing cardImages */
+img[src*="cardImages"] {
+    height: 90px; /* Set the height to 57px */
+    width: auto; /* Set the width to auto */
 }
 
+  /* Select the element with id pfp */
 #pfp {
-    width: 70px;
-    height: 70px;
-    border: #000;
-    border-style: outset;
-    border-width: 5px;
+    height: 70px; /* Set the height to 70px */
+    width: 70px; /* Set the width to 70px */
+}
+
+  /* Select the element with class midja */
+.midja {
+    display: flex; /* Use flexbox layout */
+    justify-content: center; /* Align items horizontally in the center */
+    align-items: center; /* Align items vertically in the center */
+    margin-left: 0; /* Remove the space on the left of the profile picture and text */
+    padding-top: 10px; /* Add some space on the top of the profile picture and text */
+}
+
+  /* Select the element with class userInfo */
+.userInfo {
+    margin-left: 10px; /* Add some space between the image and the text */
+}
+
+/* Select the element with id card */
+#card {
+    margin-left: 10px; /* Add some space on the left of the card names */
 }

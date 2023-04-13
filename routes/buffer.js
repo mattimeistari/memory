@@ -36,10 +36,12 @@ router.post('/', (req, res) => {
             res.redirect('/game');
         }
     }
+
     // if no match is found, redirect the client to the index page
     if (!login) {
         res.redirect('/');
     }
+    
 });
 
 module.exports = router;
