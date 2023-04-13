@@ -13,7 +13,7 @@ router.get('/', (req, res) => {
         res.redirect('/game');
     } else {
         // if not, redirect them to the index page
-        res.redirect('/');
+        res.redirect("/?status=fail");
     }
 });
 
@@ -39,7 +39,7 @@ router.post('/', (req, res) => {
 
     // if no match is found, redirect the client to the index page
     if (!login) {
-        res.redirect('/');
+        res.redirect("/?status=fail");
     }
     
 });
