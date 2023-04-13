@@ -5,23 +5,6 @@ const session = require('express-session');
 
 router.post('/', (req, res) => {
 
-    const file = fs.readFileSync('./json/users.json');
-    const data = JSON.parse(file);
-    let login = false;
-    for(let i = 0; i < data.length; i += 1) {
-        if (req.body.username == data[i].userName && 
-            req.body.password == data[i].password) {
-            req.session.userName = req.body.username;
-            req.session.pfp = data[i].pfp;
-            req.session.isLoggedIn = true;
-            login = true;
-            console.log(`user ${data[i].userName} has logged in.`.blue);
-        }
-    }
-    const userName = req.session.userName;
-    const pfp = req.session.pfp;
-
-
     const sorts = ["hearts", "spades", "clubs", "diamonds"];
     const numbers = ["ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king"];
     const deck = [];

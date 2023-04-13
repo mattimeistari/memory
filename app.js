@@ -11,6 +11,7 @@ const session = require("express-session");
 const indexPage = require("./routes/index");
 const gamePage = require("./routes/game");
 const registerPage = require("./routes/register");
+const bufferPage = require("./routes/buffer");
 
 const app = express();
 
@@ -39,6 +40,7 @@ app.use(session({
 app.use("/", indexPage);
 app.use("/game", gamePage);
 app.use("/register", registerPage);
+app.use("/buffer", bufferPage);
 
 // errors : page not found
 app.use((req, res, next) => {
@@ -55,5 +57,5 @@ app.use((err, req, res) => {
 
 // setting up the server
 app.listen(3000, () => {
-    console.log("Allt er í lagi. Port 3000.......".green);
+    console.log("Allt er í lagi. Port 3000...".green);
 });

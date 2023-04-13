@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
+    <link rel="stylesheet" href="css/shared.css">
     <link rel="stylesheet" href="css/game.css">
 </head>
 <body>
@@ -15,11 +16,14 @@
 
         <p class="userInfo"><%= userName %></p>
     </div> <br>
-
+<!--
+-->
     <p id="card"><%= cardsNames %></p>
     
     <% for(let i = 0; i < cards.length; i++) { %>
         <img src="/images/cardImages/<%= cards %>.png" alt="card image">
     <% } %>
+
+
 </body>
 </html>
