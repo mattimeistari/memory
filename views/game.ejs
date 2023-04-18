@@ -17,9 +17,11 @@
 
         <p class="userInfo"><%= userName %></p>
     </div> <br>
+
+    <p>Score: <%= %> every fail -10</p>
 <!--
 -->
-    <p id="card"><%= cardsTitles %></p>
+
     <div id="cardButtons">
         <button type="submit">
             <img src="/images/cardImages/<%= cards[0] %>.png" alt="card image">
@@ -35,7 +37,30 @@
         </button>
     </div>
 
-    <%# cards.forEach(card => { %>
+    <table class="scoreboard">
+        <tr>
+            <th colspan="2">Top Players</th>
+        </tr>
+        <% topPlayers.forEach(function(player) { %>
+        <tr>
+            <td>tempUser</td>
+            <td>tempScore</td>
+        </tr>
+        <% }); %>
+    </table>
+
+
+    <%#
+    Nodejs
+    flakk
+    gott css
+    myndir
+    session
+    json
+    github
+    js
+
+    cards.forEach(card => { %>
     <%# }) %>
 </body>
 </html>

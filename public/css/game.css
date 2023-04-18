@@ -17,12 +17,16 @@ img[src*="cardImages"] {
     align-items: center; /* Align items vertically in the center */
     margin-left: 0; /* Remove the space on the left of the profile picture and text */
     padding-top: 10px; /* Add some space on the top of the profile picture and text */
+    padding-bottom: 60px;
 }
 
-  /* Select the element with class userInfo */
 .userInfo {
-    margin-left: 10px; /* Add some space between the image and the text */
-}
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Use a clean and modern font */
+  font-size: 16px; /* Set the font size to 16px */
+  font-weight: 400; /* Set the font weight to normal */
+  color: #333; /* Set the font color to a dark gray */
+  margin-left: 10px; /* Add some space between the image and the text */
+  }
 
 /* Select the element with id card */
 #card {

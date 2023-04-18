@@ -63,6 +63,8 @@ router.get("/", (req, res) => {
     // prtint cardsnames
     console.log(cardsTitles);
 
+    let topPlayers = [a, b, c, d, e, f, g, h, i]
+
     res.render("game", { title: ".", userName, pfp, cards: req.session.cards, deck: req.session.deck, cardsTitles: req.session.cardsTitles });
 });
 
