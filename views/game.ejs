@@ -18,36 +18,60 @@
         <p class="userInfo"><%= userName %></p>
     </div> <br>
 
-    <p>Score: <%= %> every fail -10</p>
+    
 <!--
 -->
+    <div id="game">
+        <p>Score: <%= %> every fail -10</p>
 
-    <div id="cardButtons">
-        <button type="submit">
-            <img src="/images/cardImages/<%= cards[0] %>.png" alt="card image">
-        </button>
-        <button type="submit">
-            <img src="/images/cardImages/<%= cards[1] %>.png" alt="card image">
-        </button>
-        <button type="submit">
-            <img src="/images/cardImages/<%= cards[2] %>.png" alt="card image">
-        </button>
-        <button type="submit">
-            <img src="/images/cardImages/<%= cards[3] %>.png" alt="card image">
-        </button>
+        <div id="cardButtons">
+            <button type="submit">
+                <img src="/images/cardImages/<%= cards[0] %>.png" alt="card image">
+            </button>
+            <button type="submit">
+                <img src="/images/cardImages/<%= cards[1] %>.png" alt="card image">
+            </button>
+            <button type="submit">
+                <img src="/images/cardImages/<%= cards[2] %>.png" alt="card image">
+            </button>
+            <button type="submit">
+                <img src="/images/cardImages/<%= cards[3] %>.png" alt="card image">
+            </button>
+
+            <br>
+
+            <button type="submit">
+                <img src="/images/cardImages/<%= cards[4] %>.png" alt="card image">
+            </button>
+            <button type="submit">
+                <img src="/images/cardImages/<%= cards[5] %>.png" alt="card image">
+            </button>
+            <button type="submit">
+                <img src="/images/cardImages/<%= cards[6] %>.png" alt="card image">
+            </button>
+            <button type="submit">
+                <img src="/images/cardImages/<%= cards[7] %>.png" alt="card image">
+            </button>
+            <br>
+            <button type="submit" id="reset">
+                reset.
+            </button>
+        </div>
     </div>
-
+    
+    <h2 id="prove">prove your worth</h2>
     <table class="scoreboard">
         <tr>
             <th colspan="2">Top Players</th>
         </tr>
         <% topPlayers.forEach(function(player) { %>
         <tr>
-            <td>tempUser</td>
-            <td>tempScore</td>
+            <td><%= player.username %></td>
+            <td><%= player.highScore %></td>
         </tr>
         <% }); %>
     </table>
+
 
 
     <%#

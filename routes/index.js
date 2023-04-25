@@ -36,6 +36,7 @@ router.post('/', (req, res) => {
                 userName: username,
                 password: password,
                 pfp: pfp,
+                highScore: 0,
             });
     
             const updatedData = JSON.stringify(usersArray);

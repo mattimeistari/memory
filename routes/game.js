@@ -4,7 +4,8 @@ const router = express.Router();
 const path = require("path");
 const colors = require("colors");
 const session = require("express-session");
-
+const usersData = fs.readFileSync("./json/users.json");
+const users = JSON.parse(usersData);
 
 // Route handlers
 router.get("/", (req, res) => {
@@ -20,7 +21,6 @@ router.get("/", (req, res) => {
     // pfp code
     const { userName, pfp } = req.session;
     if (!pfp) {
-        
         console.log(pfp, userName)
     } else {
         console.log(pfp, userName)
@@ -51,7 +51,7 @@ router.get("/", (req, res) => {
         console.log("hmm!!".red);
         req.session.cards = [];
         req.session.cardsTitles = [];
-        for (let i = 0; i < 4; i++) {
+        for (let i = 0; i < 8; i++) {
             const random = Math.floor(Math.random() * req.session.deck.length);
             req.session.cards.push(req.session.deck.splice(random, 1)[0]);
             req.session.cardsTitles.push(req.session.cardsNames.splice(random, 1)[0]);
@@ -63,9 +63,16 @@ router.get("/", (req, res) => {
     // prtint cardsnames
     console.log(cardsTitles);
 
-    let topPlayers = [a, b, c, d, e, f, g, h, i]
+    // skorboard kóði
+    let topPlayers = users
+    .map((user) => ({
+        username: user.userName,
+        highScore: user.highScore || 0,
+    }))
+    .sort((a, b) => b.highScore - a.highScore)
+    .slice(0, 9);
 
-    res.render("game", { title: ".", userName, pfp, cards: req.session.cards, deck: req.session.deck, cardsTitles: req.session.cardsTitles });
+    res.render("game", { title: ".", userName, pfp, cards: req.session.cards, deck: req.session.deck, cardsTitles: req.session.cardsTitles, topPlayers });
 });
 
 router.post("/", (req, res) => {
