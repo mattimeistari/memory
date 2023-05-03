@@ -44,6 +44,7 @@ button:not(#reset) {
   background: none;
   border: none;
   outline: none;
+  margin-bottom: 10px;
 }
 
 /* Style the button to have a pointer cursor on hover */
