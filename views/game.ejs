@@ -24,38 +24,22 @@
     <div id="game">
         <p>Score: <%= %> every fail -10</p>
 
+
         <div id="cardButtons">
-            <button type="submit">
-                <img src="/images/cardImages/<%= cards[0] %>.png" alt="card image">
-            </button>
-            <button type="submit">
-                <img src="/images/cardImages/<%= cards[1] %>.png" alt="card image">
-            </button>
-            <button type="submit">
-                <img src="/images/cardImages/<%= cards[2] %>.png" alt="card image">
-            </button>
-            <button type="submit">
-                <img src="/images/cardImages/<%= cards[3] %>.png" alt="card image">
-            </button>
-
+            <%  %>
+            <% for (var i=0; i<cards.length; i++) {%>
+                <button type="submit">
+                    <img src="/images/cardImages/<%= cards[i] %>.png" alt="card image">
+                </button>
+                <% if (i == 3) { %>
+                    <br>
+                <% } %>
+            <% } %>
             <br>
-
-            <button type="submit">
-                <img src="/images/cardImages/<%= cards[4] %>.png" alt="card image">
-            </button>
-            <button type="submit">
-                <img src="/images/cardImages/<%= cards[5] %>.png" alt="card image">
-            </button>
-            <button type="submit">
-                <img src="/images/cardImages/<%= cards[6] %>.png" alt="card image">
-            </button>
-            <button type="submit">
-                <img src="/images/cardImages/<%= cards[7] %>.png" alt="card image">
-            </button>
-            <br>
-            <button type="submit" id="reset">
+            <button type="submit" id="reset" onclick="reloadDeck()">
                 reset.
             </button>
+            <script>function reloadDeck() {location.reload}</script>
         </div>
     </div>
     

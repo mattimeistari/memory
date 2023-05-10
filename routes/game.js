@@ -21,9 +21,9 @@ router.get("/", (req, res) => {
     // pfp code
     const { userName, pfp } = req.session;
     if (!pfp) {
-        console.log(pfp, userName)
+        console.log(`Failed to find ${pfp}`)
     } else {
-        console.log(pfp, userName)
+        console.log(`User ${userName}'s profile picture ${pfp} successfully loaded`)
     }
 
     // Cards code
@@ -48,14 +48,13 @@ router.get("/", (req, res) => {
     }
 
     if (!req.session.cards) {
-        console.log("hmm!!".red);
+        console.log("Deck created".red);
         req.session.cards = [];
         req.session.cardsTitles = [];
         for (let i = 0; i < 8; i++) {
             const random = Math.floor(Math.random() * req.session.deck.length);
             req.session.cards.push(req.session.deck.splice(random, 1)[0]);
             req.session.cardsTitles.push(req.session.cardsNames.splice(random, 1)[0]);
-            console.log(req.session.cards);
         }
     }
     let cardsTitles = req.session.cardsTitles;
